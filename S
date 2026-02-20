@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Archivo 58</title>
+
+<style>
+body{
+  font-family: Arial;
+  background:#ffd6eb;
+  text-align:center;
+  padding:30px;
+}
+
+.caja{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+button{
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  background:#ff4da6;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+input{
+  padding:8px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+</style>
+
+</head>
+<body>
+
+<h1>🎁 Archivo 58 🎁</h1>
+<div class="caja" id="contenido"></div>
+
+<script>
+
+const fechaInicio = new Date("2026-02-20"); 
+const hoy = new Date();
+
+const diferencia = Math.floor((hoy - fechaInicio) / (1000*60*60*24));
+
+const regalos = [
+
+`<h2>Día 1 – Carta</h2>
+<p>Feliz cumpleaños Sebas
+
+Un día como hoy naciste y quiero tomarme el tiempo de escribirte algo más que una simple carta como probablemente hicieron los demas o un simple “felicidades”. Porque aunque nuestra historia cambió sigue siendo parte de mi vida y siempre lo será porque nunca vas a salir de mi corazón mucho menos de mi mente.
+
+La verdad es que no todo el mundo tiene la suerte de tener a un sebas en su vida y yo le doy gracias a Dios cada dia por de alguna u otra forma juntarme contigo y si es que no estamos juntos no podemos estar separados, aunque la mayoria de veces lo de nosotros es pura pelea lo intentamos de arreglar y eso habla bien de nosotros.
+
+Te deseo un año lleno de crecimiento y que te hagan sentir orgulloso de la maravillosa persona que eres,
+
+Gracias por los recuerdos lindos que tengo contigo, por las conversaciones profundas en las que no paré de pensar, por las risas y hasta por las lagrimas porque hasta eso vale la pena y todo eso forma parte de nosotros.
+
+Te quiero en mi vida como un acompañante. No todos las personas aguantan un vinculo asi pero el nuestro encontró otra manera de quedarse.
+
+Disfruta muchísimo tu día que la pases muy bien y que sepas que cada dia te amo mas, que soples las velas y que este nuevo año te acerque cada vez más a un mejor sebas ❤️
+
+
+Alma.</p>`,
+
+`<h2>Día 2 – Video</h2>
+<video width="300" controls>
+<source src="video.mp4" type="video/mp4">
+</video>`,
+
+`<h2>Día 3 – Playlist</h2>
+<a href="PEGA_AQUI_TU_LINK_DE_SPOTIFY" target="_blank">
+<button>Escuchar Playlist</button>
+</a>`,
+
+`<h2>Día 4 – Recuerdos</h2>
+<ul>
+<li>El día que...</li>
+<li>La vez que...</li>
+<li>Tu frase que siempre me daba risa...</li>
+<li>Cuando...</li>
+<li>Aquella vez...</li>
+<li>El mensaje que...</li>
+<li>El chiste que...</li>
+<li>Cuando discutimos por...</li>
+<li>El momento en...</li>
+<li>La despedida que...</li>
+</ul>`,
+
+`<h2>Día 5 – Juego</h2>
+<p>¿Dónde fue nuestra primera salida?</p>
+<input id="respuesta">
+<br><br>
+<button onclick="verificar()">Responder</button>
+<p id="resultado"></p>`,
+
+`<h2>Día 6 – Mensaje final</h2>
+<p>Aquí va tu mensaje maduro y bonito.</p>`,
+
+`<h2>Día 7 – Archivo 58</h2>
+<p>Aquí va todo el contenido especial.</p>`
+
+];
+
+const cont = document.getElementById("contenido");
+
+if(diferencia >= 0 && diferencia < regalos.length){
+    cont.innerHTML = regalos[diferencia];
+} 
+else if(diferencia >= regalos.length){
+    cont.innerHTML = "<h2>Todos los archivos fueron abiertos 🎉</h2>";
+} 
+else {
+    cont.innerHTML = "<h2>Este archivo aún está bloqueado 🔒</h2>";
+}
+
+function verificar(){
+  const respuesta = document.getElementById("respuesta").value.toLowerCase();
+
+  if(respuesta === "cine"){   // CAMBIA "cine" por tu respuesta real
+    document.getElementById("resultado").innerHTML = 
+    "Correcto 🎉 Mañana se desbloquea el siguiente archivo.";
+  } 
+  else {
+    document.getElementById("resultado").innerHTML = 
+    "Incorrecto 😏 Intenta otra vez.";
+  }
+}
+
+</script>
+
+</body>
+</html>
